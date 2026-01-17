@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  vision_node:
+    build: .
+    container_name: traffic_light_container
+    network_mode: "host"  # Allows ROS2 to communicate with other nodes on the host
+    volumes:
+      - ./src:/ros2_ws/src  # Mount source so you can edit code on host
+      - /tmp/.X11-unix:/tmp/.X11-unix # For GUI/OpenCV display
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    stdin_open: true
+    tty: true
