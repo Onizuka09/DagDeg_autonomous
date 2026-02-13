@@ -4,7 +4,7 @@ import numpy as np
 import time
 from typing import List, Tuple
 import tflite_runtime.interpreter as tflite
-
+model_p="/ros2_ws/src/vision_perception/models/traffic_light_model.tflite"
 
 class TFLiteTrafficLightDetector:
     def __init__(self, tflite_model_path: str):
@@ -99,7 +99,7 @@ class TFLiteTrafficLightDetector:
 
 def run_live(model_path):
     detector = TFLiteTrafficLightDetector(model_path)
-    cap = cv2.VideoCapture(2)
+    cap = cv2.VideoCapture(0)
     
     # Set camera resolution
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)

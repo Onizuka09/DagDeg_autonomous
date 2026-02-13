@@ -2,13 +2,17 @@ version: '3.8'
 services:
   vision_node:
     build: .
-    container_name: traffic_light_container
+    container_name: ros2_container
     network_mode: "host"  # Allows ROS2 to communicate with other nodes on the host
+    privileged: true
     volumes:
-      - ./src:/ros2_ws/src  # Mount source so you can edit code on host
+      - ./ROS2/autonomous_robot_ws/src:/ros2_ws/src  # Mount source so you can edit code on host
       - /tmp/.X11-unix:/tmp/.X11-unix # For GUI/OpenCV display
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
+    devices:
+          - "/dev/video0:/dev/video0" # Maps the camera
     stdin_open: true
     tty: true
+    command: bash -c "source /ros2_ws/install/setup.bash && bash"  

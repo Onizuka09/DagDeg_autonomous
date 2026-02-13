@@ -13,7 +13,7 @@ class CameraRawNode(Node):
             10)
          
         self.bridge = CvBridge()
-        self.cap = cv2.VideoCapture(2,cv2.CAP_V4L2)  # 0 = default camera
+        self.cap = cv2.VideoCapture(0,cv2.CAP_V4L2)  # 0 = default camera
         if not self.cap.isOpened():
             self.get_logger().error("cannot open camera")
         self.timer = self.create_timer(1.0/30.0, self.timer_callback)
