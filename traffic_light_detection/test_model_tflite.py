@@ -102,7 +102,7 @@ class TFLiteTrafficLightDetector:
 
 def run_live(model_path):
     detector = TFLiteTrafficLightDetector(model_path)
-    cap = cv2.VideoCapture(2)
+    cap = cv2.VideoCapture(0)
     
     # Set camera resolution
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)

@@ -1,3 +1,4 @@
+
 # Use the official ROS 2 Humble base image
 FROM ros:humble
 
@@ -18,20 +19,18 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Install Python dependencies
+# We install tflite-runtime specifically.
+# Note: For x86_64 (Laptop), this works via pip.
+# For Raspberry Pi, you might need the specific wheel.
 RUN pip3 install --upgrade pip
 RUN pip3 install \
     "numpy<2.0" \
     opencv-python \
     tflite-runtime
 
-# 3. Setup Workspace
-# We work in /ros2_ws, NOT /ros2_ws/src
-WORKDIR /ros2_ws
-
-# Copy your source code into the container
-# Adjust this path if your src folder is named differently on your Pi
+# Copy ros2
+WORKDIR /ros2_ws/src
 COPY ./ROS2/autonomous_robot_ws/src /ros2_ws/src
-
 # 4. Install ROS dependencies using rosdep
 RUN . /opt/ros/humble/setup.sh && \
     apt-get update && \
@@ -46,4 +45,5 @@ RUN . /opt/ros/humble/setup.sh && \
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 RUN echo "source /ros2_ws/install/setup.bash" >> ~/.bashrc
 
+# Set the default command to bash
 CMD ["bash"]

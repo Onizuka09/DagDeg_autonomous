@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}Project Overview}{2}{section.1}%
+\contentsline {section}{\numberline {2}System Architecture}{2}{section.2}%
+\contentsline {section}{\numberline {3}Hardware Implementation}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Robot Fabrication}{3}{subsection.3.1}%
+\contentsline {section}{\numberline {4}STM32 Bare-Metal Development}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Developed Drivers}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}PID Control System}{4}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Position PID Controller}{4}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Odometry Module}{4}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Velocity Ramping System}{4}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Traffic Light Detection Model}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Model Development Process}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Training and Optimization}{6}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Model Conversion to TensorFlow Lite}{6}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Performance Metrics}{6}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Model Architecture Highlights}{6}{subsection.5.5}%
+\contentsline {section}{\numberline {6}ROS2 Implementation on Raspberry Pi}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Docker Container Deployment}{7}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Remote Visualization with RViz2}{7}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Traffic Light Detection Results}{8}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}ROS2 Packages}{9}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Topics and Communication}{9}{subsubsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.5}Docker Container Setup}{9}{subsection.6.5}%
+\contentsline {section}{\numberline {7}System Integration}{9}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Visualization System}{9}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Challenges and Solutions}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The Bare-Metal Integration Oversight}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Real-Time and System Stability Performance}{10}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Model Deployment on Resource-Constrained Hardware}{10}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Conclusion}{10}{section.9}%
+\contentsline {section}{\numberline {10}Repository Links}{11}{section.10}%
