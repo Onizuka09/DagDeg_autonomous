@@ -21,7 +21,7 @@ class ZettaBridgeNode(Node):
         self.tf_broadcaster = tf2_ros.TransformBroadcaster(self)
 
         # Initialize Zetta for your actual struct
-        self.zetta = ZettaProtocol(port="/dev/ttyACM0", baudrate=115200)
+        self.zetta = ZettaProtocol(port="/dev/ttyS0", baudrate=115200)
 
         # Register parser for YOUR OdometryTypedef (12 floats + 2 shorts = 52 bytes)
         def parse_odometry_struct(payload):

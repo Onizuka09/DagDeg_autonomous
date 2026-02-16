@@ -20,7 +20,7 @@ def generate_launch_description():
         name='zetta_bridge',
         output='screen',
         parameters=[{
-            'port': '/dev/ttyACM0',
+            'port': '/dev/ttyS0',
             'baudrate': 115200
         }]
     )
@@ -64,5 +64,5 @@ def generate_launch_description():
         zetta_bridge,
         joint_state_publisher,  # ADD THIS BEFORE robot_state_publisher
         robot_state_publisher,
-        rviz_node
+        # rviz_node
     ])

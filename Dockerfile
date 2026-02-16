@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     ros-humble-cv-bridge \
     ros-humble-vision-msgs \
     ros-humble-sensor-msgs \
+    ros-humble-joint-state-publisher \
     ros-humble-ament-index-python \
     && rm -rf /var/lib/apt/lists/*
 
@@ -26,15 +27,19 @@ RUN pip3 install --upgrade pip
 RUN pip3 install \
     "numpy<2.0" \
     opencv-python \
+    pyserial \
+    crc \ 
     tflite-runtime
 
 # Copy ros2
 WORKDIR /ros2_ws/src
 COPY ./ROS2/autonomous_robot_ws/src /ros2_ws/src
+RUN rm -rf build install log
+
 # 4. Install ROS dependencies using rosdep
 RUN . /opt/ros/humble/setup.sh && \
     apt-get update && \
-    rosdep install --from-paths src --ignore-src -r -y && \
+    rosdep install --from-paths . --ignore-src -r -y && \
     rm -rf /var/lib/apt/lists/*
 
 # 5. Build the workspace (from /ros2_ws)
@@ -44,6 +49,6 @@ RUN . /opt/ros/humble/setup.sh && \
 # 6. Source the setup script automatically
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 RUN echo "source /ros2_ws/install/setup.bash" >> ~/.bashrc
-
+RUN echo "export ROS_DOMAIN_ID=30" >> ~/.bashrc
 # Set the default command to bash
 CMD ["bash"]
